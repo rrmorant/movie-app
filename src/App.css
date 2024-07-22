@@ -6,11 +6,32 @@ body {
 .movie-app > .row {
 	overflow-x: auto;
 	flex-wrap: nowrap;
+	white-space: nowrap;
+	cursor: grab;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.movie-app > .row.active {
+	cursor: grabbing;
+}
+
+.movie-app > .row::-webkit-scrollbar {
+	display: none;
+}
+
+.row > * {
+	flex-shrink: 1;
+	width: auto;
+	padding-right: calc(var(--bs-gutter-x) * 0.25);
+	padding-left: calc(var(--bs-gutter-x) * 0.25);
 }
 
 .image-container {
 	position: relative;
 	transition: transform 0.2s;
+	margin: 0 5px;
+	display: inline-block;
 }
 
 .image-container:hover {
